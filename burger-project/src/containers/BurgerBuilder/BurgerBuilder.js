@@ -7,10 +7,10 @@ import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 
 const INGREDIENT_PRICES = {
-  salad: 0.5,
-  cheese: 0.4,
-  meat: 1.3,
-  bacon: 0.7
+  salad: 2,
+  cheese: 3,
+  meat: 5,
+  bacon: 1
 };
 
 class BurgerBuilder extends Component {
@@ -25,7 +25,7 @@ class BurgerBuilder extends Component {
       cheese: 0,
       meat: 0
     },
-    totalPrice: 4,
+    totalPrice: 10,
     purchasable: false,
     purchasing: false
   };
@@ -88,6 +88,7 @@ class BurgerBuilder extends Component {
     const disabledInfo = {
       ...this.state.ingredients
     };
+    console.log(disabledInfo);
     for (let key in disabledInfo) {
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
